@@ -1,0 +1,279 @@
+:root {
+    --bg-black: #0a0a0c;
+    --neon-green: #00ff41;
+    --neon-purple: #bc13fe;
+    --neon-blue: #00f0ff;
+    --text-color: #d1d1d1;
+    --terminal-font: 'Fira Code', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: var(--text-color);
+    font-family: var(--terminal-font);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Scanline Effect */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 255, 65, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: fixed;
+    bottom: 100%;
+    animation: scanline 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+}
+
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--neon-green);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
+}
+
+.logo span {
+    color: var(--neon-purple);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--neon-green);
+    text-shadow: 0 0 8px var(--neon-green);
+}
+
+/* Hero Section */
+section {
+    min-height: 100vh;
+    padding: 6rem 10%;
+    display: flex;
+    align-items: center;
+}
+
+.hacker-badge {
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 5px 15px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.neon-text {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green);
+}
+
+.terminal-text {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.cta-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* LED Buttons */
+.led-btn {
+    padding: 12px 25px;
+    border: 2px solid var(--neon-green);
+    background: transparent;
+    color: var(--neon-green);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+    box-shadow: inset 0 0 5px var(--neon-green), 0 0 5px var(--neon-green);
+}
+
+.led-btn:hover {
+    background: var(--neon-green);
+    color: black;
+    box-shadow: 0 0 25px var(--neon-green);
+}
+
+.github-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    border: 2px solid var(--neon-purple);
+    background: transparent;
+    color: var(--neon-purple);
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: inset 0 0 5px var(--neon-purple), 0 0 5px var(--neon-purple);
+}
+
+.github-btn:hover {
+    background: var(--neon-purple);
+    color: white;
+    box-shadow: 0 0 25px var(--neon-purple);
+}
+
+.icon-white {
+    width: 20px;
+    filter: invert(1);
+}
+
+/* Sections */
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.neon-purple { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+.neon-green { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-green); }
+.neon-blue { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
+
+.terminal-box {
+    background: rgba(0, 255, 65, 0.03);
+    border-left: 3px solid var(--neon-green);
+    padding: 2rem;
+    border-radius: 0 10px 10px 0;
+}
+
+.cursor-blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* LED Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+.led-border {
+    position: relative;
+    background: #111;
+    padding: 2rem;
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.led-border::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-green), transparent, var(--neon-purple));
+    z-index: -1;
+    animation: led-rotate 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes led-rotate {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.neon-text-small {
+    color: var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* DNA Animation Hacker Style */
+.hacker-dna {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.node {
+    width: 40px;
+    height: 10px;
+    background: var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+    animation: dna-hacker 2s ease-in-out infinite alternate;
+}
+
+@keyframes dna-hacker {
+    from { transform: scaleX(0.5); opacity: 0.5; }
+    to { transform: scaleX(2.5); opacity: 1; }
+}
+
+.node:nth-child(2) { animation-delay: 0.2s; background: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
+.node:nth-child(3) { animation-delay: 0.4s; }
+.node:nth-child(4) { animation-delay: 0.6s; background: var(--neon-purple); box-shadow: 0 0 15px var(--neon-purple); }
+.node:nth-child(5) { animation-delay: 0.8s; }
+
+/* Contact Specific Buttons */
+.neon-green-btn { border-color: var(--neon-green); color: var(--neon-green); box-shadow: inset 0 0 5px var(--neon-green), 0 0 10px var(--neon-green); }
+.neon-purple-btn { border-color: var(--neon-purple); color: var(--neon-purple); box-shadow: inset 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple); }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
