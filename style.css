@@ -49,55 +49,100 @@ body {
     opacity: 0.2;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    background: rgba(10, 10, 12, 0.8);
-    backdrop-filter: blur(5px);
-    border-bottom: 1px solid var(--neon-green);
-    position: fixed;
+/* Glitch Animation */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    z-index: 100;
+    height: 100%;
+    background: var(--bg-black);
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--neon-green);
-    text-shadow: 0 0 10px var(--neon-green);
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
-.logo span {
-    color: var(--neon-purple);
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
 }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
+@keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    20% { clip: rect(62px, 9999px, 42px, 0); }
+    40% { clip: rect(16px, 9999px, 78px, 0); }
+    60% { clip: rect(58px, 9999px, 49px, 0); }
+    80% { clip: rect(73px, 9999px, 86px, 0); }
+    100% { clip: rect(82px, 9999px, 31px, 0); }
 }
 
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 0.85rem;
+@keyframes glitch-anim2 {
+    0% { clip: rect(65px, 9999px, 100px, 0); }
+    20% { clip: rect(30px, 9999px, 20px, 0); }
+    40% { clip: rect(10px, 9999px, 90px, 0); }
+    60% { clip: rect(50px, 9999px, 30px, 0); }
+    80% { clip: rect(80px, 9999px, 60px, 0); }
+    100% { clip: rect(40px, 9999px, 80px, 0); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Potresti aggiungere un menu burger qui in futuro */
+    }
+    
+    section {
+        padding: 4rem 5%;
+    }
+
+    .neon-text {
+        font-size: 2.5rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Menu Toggle (Hidden by default) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--neon-green);
     transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--neon-green);
-    text-shadow: 0 0 8px var(--neon-green);
-}
-
-/* Hero Section */
-section {
-    min-height: 100vh;
-    padding: 6rem 10%;
-    display: flex;
-    align-items: center;
 }
 
 .hacker-badge {

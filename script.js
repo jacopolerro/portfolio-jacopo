@@ -4,14 +4,15 @@ const ctx = canvas.getContext('2d');
 
 let width, height;
 let particles = [];
+let mouse = { x: null, y: null };
 
 function resize() {
     width = canvas.width = window.innerWidth;
     height = canvas.height = window.innerHeight;
+    initParticles();
 }
 
 window.addEventListener('resize', resize);
-resize();
 
 class Particle {
     constructor() {
@@ -53,7 +54,6 @@ function animate() {
         particles[i].update();
         particles[i].draw();
 
-        // Connect nearby particles
         for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
@@ -71,7 +71,6 @@ function animate() {
         }
     }
 
-    // Connect to mouse
     if (mouse.x && mouse.y) {
         for (let i = 0; i < particles.length; i++) {
             const dx = particles[i].x - mouse.x;
@@ -93,7 +92,6 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-let mouse = { x: null, y: null };
 window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
     mouse.y = e.y;
@@ -103,15 +101,66 @@ window.addEventListener('mouseout', () => {
     mouse.y = null;
 });
 
-initParticles();
+resize();
 animate();
 
-// Smooth scrolling for navigation links
+// Real Typing Effect
+const messages = [
+    "> Inizializzazione dati in corso...",
+    "Studente al secondo anno appassionato di come la tecnologia possa 'hackerare' i limiti della medicina tradizionale.",
+    "Sto imparando a manipolare dati e sistemi per creare un ponte tra il codice binario e il DNA umano."
+];
+
+let currentMessageIndex = 0;
+let charIndex = 0;
+let isTypingStarted = false;
+
+function typeMessage() {
+    if (currentMessageIndex < messages.length) {
+        const currentElement = document.getElementById(`type-${currentMessageIndex + 1}`);
+        if (charIndex < messages[currentMessageIndex].length) {
+            currentElement.textContent += messages[currentMessageIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeMessage, 30);
+        } else {
+            currentMessageIndex++;
+            charIndex = 0;
+            setTimeout(typeMessage, 500);
+        }
+    }
+}
+
+// Start typing when section is in view
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !isTypingStarted) {
+            isTypingStarted = true;
+            typeMessage();
+        }
+    });
+}, { threshold: 0.5 });
+
+const typingContainer = document.getElementById('typing-container');
+if (typingContainer) observer.observe(typingContainer);
+
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
+
+// Mobile Menu Logic
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        // Simple CSS toggle handled by adding/removing class
+    });
+}
