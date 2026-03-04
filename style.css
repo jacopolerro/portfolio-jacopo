@@ -57,7 +57,34 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 40px;
+}
+
+.lang-switch {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: default;
+    user-select: none;
+    margin-left: 10px;
+}
+
+.lang-switch span {
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.lang-switch span:hover {
+    color: var(--primary);
+    background: rgba(98, 0, 234, 0.05);
+}
+
+.lang-switch span.active {
+    color: var(--primary);
+    background: var(--accent);
 }
 
 .nav-links a {
