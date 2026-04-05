@@ -85,6 +85,89 @@ document.getElementById('lang-en').addEventListener('click', () => {
 // Initialize Language
 updateContent(currentLang);
 
+// Dynamic Background and Text Color on Scroll
+function updateDynamicStyles() {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollTop = window.scrollY;
+    const scrollPercent = Math.min(scrollTop / scrollHeight, 1);
+
+    // Interpolate background color: Light Purple (#f3e5f5) to Vibrant Purple (#4a148c)
+    // RGB Light Purple: 243, 229, 245
+    // RGB Vibrant Purple: 74, 20, 140
+    const r = Math.round(243 - (243 - 74) * scrollPercent);
+    const g = Math.round(229 - (229 - 20) * scrollPercent);
+    const b = Math.round(245 - (245 - 140) * scrollPercent);
+
+    document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    // Professional Text Transition
+    const textColor = scrollPercent > 0.4 ? '#ffffff' : '#2d3436';
+    const mutedColor = scrollPercent > 0.4 ? 'rgba(255, 255, 255, 0.7)' : '#636e72';
+    
+    document.body.style.color = textColor;
+    
+    document.querySelectorAll('.hero h1, .section-title, .navbar .logo span, .nav-links a').forEach(el => {
+        el.style.color = textColor;
+    });
+
+    document.querySelectorAll('.lead').forEach(el => {
+        el.style.color = mutedColor;
+    });
+
+    // Navbar adaptation
+    const navBg = scrollPercent > 0.1 
+        ? `rgba(${r}, ${g}, ${b}, 0.8)` 
+        : 'rgba(255, 255, 255, 0.05)';
+    document.querySelector('.navbar').style.background = navBg;
+}
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('is-active');
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('is-active');
+        navLinks.classList.remove('active');
+    });
+});
+
+// Reveal Sections on Scroll (Immersive Effect)
+const revealSections = () => {
+    const sections = document.querySelectorAll('.section, .hero, .footer');
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight * 0.85;
+        
+        if (sectionTop < triggerPoint) {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+            section.style.transition = 'all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1)';
+        }
+    });
+};
+
+// Set initial state for reveal
+document.querySelectorAll('.section').forEach(s => {
+    s.style.opacity = '0';
+    s.style.transform = 'translateY(30px)';
+});
+
+window.addEventListener('scroll', () => {
+    updateDynamicStyles();
+    revealSections();
+});
+
+// Initial calls
+updateDynamicStyles();
+revealSections();
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
