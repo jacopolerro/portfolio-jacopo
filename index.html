@@ -3,89 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jacopo Lerro | Digital Medicine Specialist</title>
-    <!-- Cache busting: aggiungo ?v=2 per forzare l'aggiornamento -->
-    <link rel="stylesheet" href="style.css?v=2">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Syne:wght@700&display=swap" rel="stylesheet">
+    <meta name="description" content="Jacopo Lerro realizza siti web professionali, landing page e presenze digitali su misura per professionisti, brand e attività.">
+    <title>Jacopo Lerro | Siti Web Professionali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Jacopo<span>Lerro</span></div>
-            <div class="menu-toggle" id="mobile-menu">
+    <nav class="navbar" aria-label="Navigazione principale">
+        <div class="nav-shell">
+            <a class="logo" href="#home" aria-label="Jacopo Lerro homepage">Jacopo<span>Lerro</span></a>
+            <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Apri menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav-about">Chi Sono</a></li>
-                <li><a href="#vision" data-i18n="nav-vision">Visione</a></li>
-                <li><a href="#contact" data-i18n="nav-contact">Contatti</a></li>
-                <li class="lang-switch">
-                    <span id="lang-it" class="active">IT</span> | <span id="lang-en">EN</span>
-                </li>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#servizi">Servizi</a></li>
+                <li><a href="#processo">Processo</a></li>
+                <li><a href="#portfolio">Progetti</a></li>
+                <li><a href="#prezzi">Prezzi</a></li>
+                <li><a href="#contatti">Contatti</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <span class="badge" data-i18n="hero-badge">Ingegneria dell'Informazione per la Medicina Digitale</span>
-            <h1 data-i18n="hero-title">Innovazione Tecnologica <br>al servizio della Salute</h1>
-            <p class="lead" data-i18n="hero-lead">Analisi dei dati e sistemi digitali per la medicina del futuro.</p>
-            <div class="actions">
-                <a href="#about" class="btn btn-primary" data-i18n="hero-btn">Scopri il profilo</a>
-                <a href="https://github.com/jacopolerro" target="_blank" class="btn btn-outline">GitHub</a>
+    <main>
+        <header class="hero" id="home">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="grid-lines"></div>
             </div>
-        </div>
-    </header>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="about-title">Profilo Professionale</h2>
-            <div class="card glass about-card">
-                <p data-i18n="about-p1">Studente al secondo anno appassionato di come la tecnologia possa ottimizzare i processi clinici e diagnostici.</p>
-                <p data-i18n="about-p2">Il mio obiettivo è integrare competenze informatiche avanzate con le necessità della medicina moderna.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="vision" class="section">
-        <div class="container">
-            <h2 class="section-title" data-i18n="vision-title">Aree di Competenza</h2>
-            <div class="grid">
-                <div class="card glass">
-                    <div class="card-num">01</div>
-                    <h3 data-i18n="vision-1-title">Bio-Informatica</h3>
-                    <p data-i18n="vision-1-desc">Elaborazione di dati biologici per il supporto alle decisioni cliniche.</p>
+            <div class="container hero-layout">
+                <div class="hero-copy reveal">
+                    <span class="eyebrow">Web design, sviluppo e strategia digitale</span>
+                    <h1>Siti web professionali che trasformano visite in contatti.</h1>
+                    <p class="lead">Creo landing page, siti vetrina e portfolio digitali curati nei dettagli: veloci, responsive, eleganti e pensati per raccontare il tuo valore con chiarezza.</p>
+                    <div class="actions">
+                        <a href="#contatti" class="btn btn-primary">Parliamo del progetto</a>
+                        <a href="#prezzi" class="btn btn-secondary">Vedi i pacchetti</a>
+                    </div>
+                    <div class="trust-row" aria-label="Punti di forza">
+                        <span>Design su misura</span>
+                        <span>Mobile first</span>
+                        <span>Consegna rapida</span>
+                    </div>
                 </div>
-                <div class="card glass">
-                    <div class="card-num">02</div>
-                    <h3 data-i18n="vision-2-title">Sistemi E-Health</h3>
-                    <p data-i18n="vision-2-desc">Architetture digitali sicure per la gestione della salute.</p>
-                </div>
-                <div class="card glass">
-                    <div class="card-num">03</div>
-                    <h3 data-i18n="vision-3-title">Innovazione MedTech</h3>
-                    <p data-i18n="vision-3-desc">Ricerca sulle tecnologie emergenti applicate al settore medico.</p>
+                <div class="hero-panel reveal" data-delay="120">
+                    <div class="browser-card">
+                        <div class="browser-top">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="browser-content">
+                            <div class="mini-nav"></div>
+                            <div class="preview-hero"></div>
+                            <div class="preview-grid">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="preview-list">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-note note-top">
+                        <strong>+38%</strong>
+                        <span>più richieste qualificate</span>
+                    </div>
+                    <div class="floating-note note-bottom">
+                        <strong>7 giorni</strong>
+                        <span>per una prima versione online</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <footer id="contact" class="footer">
-        <div class="container">
-            <h2 class="section-title text-white" data-i18n="contact-title">Contatti</h2>
-            <div class="card glass contact-card">
-                <p data-i18n="contact-desc">Sei interessato a collaborare o vuoi saperne di più sul mio percorso?</p>
-                <a href="mailto:jacopolerro@gmail.com" class="email-link">jacopolerro@gmail.com</a>
+        <section class="section intro-section" id="servizi">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Cosa possiamo costruire</span>
+                    <h2>Una presenza digitale completa, non solo una pagina bella.</h2>
+                    <p>Ogni progetto parte da un obiettivo: farti trovare, spiegare cosa fai e portare le persone giuste a contattarti.</p>
+                </div>
+                <div class="service-grid">
+                    <article class="service-card reveal">
+                        <span class="card-index">01</span>
+                        <h3>Landing page</h3>
+                        <p>Pagine chiare e persuasive per lanciare un servizio, raccogliere lead o presentare un'offerta specifica.</p>
+                    </article>
+                    <article class="service-card reveal" data-delay="80">
+                        <span class="card-index">02</span>
+                        <h3>Siti vetrina</h3>
+                        <p>Strutture professionali con home, servizi, chi siamo, portfolio, contatti e contenuti ottimizzati.</p>
+                    </article>
+                    <article class="service-card reveal" data-delay="160">
+                        <span class="card-index">03</span>
+                        <h3>Portfolio e personal brand</h3>
+                        <p>Esperienze digitali per raccontare competenze, progetti e identità professionale con uno stile memorabile.</p>
+                    </article>
+                    <article class="service-card reveal" data-delay="240">
+                        <span class="card-index">04</span>
+                        <h3>Restyling e performance</h3>
+                        <p>Rendo più moderno, veloce e coerente un sito esistente, migliorando UX, testi, layout e conversioni.</p>
+                    </article>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 Jacopo Lerro. Truly Humble Under God</p>
+        </section>
+
+        <section class="section dark-band" id="processo">
+            <div class="container process-layout">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Metodo di lavoro</span>
+                    <h2>Dal messaggio giusto al sito pubblicato.</h2>
+                    <p>Ti accompagno in un processo semplice, trasparente e concreto: poche riunioni, decisioni chiare, risultati visibili.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <span>01</span>
+                        <h3>Direzione</h3>
+                        <p>Definiamo pubblico, obiettivo, tono di voce, sezioni e priorità commerciali.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span>02</span>
+                        <h3>Design</h3>
+                        <p>Creo una proposta visiva coerente con il brand, pronta per essere validata e rifinita.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span>03</span>
+                        <h3>Sviluppo</h3>
+                        <p>Costruisco il sito responsive con animazioni, performance curate e struttura ordinata.</p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <span>04</span>
+                        <h3>Lancio</h3>
+                        <p>Pubblicazione, controlli finali, indicazioni operative e supporto dopo la messa online.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section class="section" id="portfolio">
+            <div class="container">
+                <div class="section-heading split reveal">
+                    <div>
+                        <span class="eyebrow">Progetti e possibilità</span>
+                        <h2>Ogni sito ha una funzione precisa.</h2>
+                    </div>
+                    <p>Qui potremo inserire i tuoi lavori reali. Per ora trovi esempi di direzioni che possiamo sviluppare insieme.</p>
+                </div>
+                <div class="work-grid">
+                    <article class="work-card reveal">
+                        <div class="work-visual visual-one"></div>
+                        <div class="work-copy">
+                            <span>Professionisti</span>
+                            <h3>Landing per consulenti e freelance</h3>
+                            <p>Messaggio immediato, prova sociale, servizi chiari e contatto sempre raggiungibile.</p>
+                        </div>
+                    </article>
+                    <article class="work-card reveal" data-delay="120">
+                        <div class="work-visual visual-two"></div>
+                        <div class="work-copy">
+                            <span>Attività locali</span>
+                            <h3>Sito vetrina per brand e negozi</h3>
+                            <p>Identità forte, informazioni essenziali, mappa, orari, servizi e chiamate all'azione.</p>
+                        </div>
+                    </article>
+                    <article class="work-card reveal" data-delay="240">
+                        <div class="work-visual visual-three"></div>
+                        <div class="work-copy">
+                            <span>Creator</span>
+                            <h3>Portfolio personale dinamico</h3>
+                            <p>Racconto visivo, progetti selezionati, bio professionale e collegamenti social.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pricing-section" id="prezzi">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="eyebrow">Prezzi indicativi</span>
+                    <h2>Pacchetti chiari, adattabili al progetto.</h2>
+                    <p>I prezzi sono una base di partenza: li aggiorneremo con le tue offerte, tempi e servizi inclusi.</p>
+                </div>
+                <div class="pricing-grid">
+                    <article class="price-card reveal">
+                        <h3>Start</h3>
+                        <p class="price">da 50 euro</p>
+                        <p class="price-desc">Per chi vuole una presenza online essenziale, curata e veloce.</p>
+                        <ul>
+                            <li>Landing page responsive</li>
+                            <li>Struttura fino a 5 sezioni</li>
+                            <li>Copy base e call to action</li>
+                            <li>Pubblicazione online</li>
+                        </ul>
+                    </article>
+                    <article class="price-card featured reveal" data-delay="100">
+                        <span class="popular">Consigliato</span>
+                        <h3>Professional</h3>
+                        <p class="price">da 100 euro</p>
+                        <p class="price-desc">Per aziende, professionisti e brand che vogliono un sito completo.</p>
+                        <ul>
+                            <li>Home e pagine interne</li>
+                            <li>Design personalizzato</li>
+                            <li>Sezione servizi e portfolio</li>
+                            <li>Ottimizzazione mobile e SEO base</li>
+                        </ul>
+                    </article>
+                    <article class="price-card reveal" data-delay="200">
+                        <h3>Custom</h3>
+                        <p class="price">su preventivo</p>
+                        <p class="price-desc">Per progetti con esigenze specifiche, integrazioni o identità più avanzate.</p>
+                        <ul>
+                            <li>Architettura su misura</li>
+                            <li>Animazioni e interazioni evolute</li>
+                            <li>Integrazioni esterne</li>
+                            <li>Supporto e manutenzione</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact-section" id="contatti">
+            <div class="container contact-layout">
+                <div class="contact-copy reveal">
+                    <span class="eyebrow">Contatti</span>
+                    <h2>Hai un'idea? Trasformiamola in una presenza digitale solida.</h2>
+                    <p>Scrivimi cosa vuoi creare, per chi è e con quale obiettivo. Ti risponderò con una direzione chiara e i prossimi passi.</p>
+                    <div class="contact-links">
+                        <a href="mailto:jacopolerro@gmail.com">jacopolerro@gmail.com</a>
+                        <a href="https://www.instagram.com/_jweb_xo?igsh=MW85Y2Zuc2lrdDdicw%3D%3D&amp;utm_source=qr" target="_blank" rel="noreferrer">Instagram professionale</a>
+                        <a href="https://github.com/jacopolerro" target="_blank" rel="noreferrer">GitHub</a>
+                    </div>
+                </div>
+                <form class="contact-form reveal" data-delay="120" action="mailto:jacopolerro@gmail.com" method="post" enctype="text/plain">
+                    <label>
+                        Nome
+                        <input type="text" name="nome" placeholder="Il tuo nome" required>
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="nome@email.com" required>
+                    </label>
+                    <label>
+                        Tipo di progetto
+                        <select name="progetto" required>
+                            <option value="">Seleziona</option>
+                            <option>Landing page</option>
+                            <option>Sito vetrina</option>
+                            <option>Portfolio personale</option>
+                            <option>Restyling sito esistente</option>
+                        </select>
+                    </label>
+                    <label>
+                        Messaggio
+                        <textarea name="messaggio" rows="5" placeholder="Raccontami cosa vuoi realizzare" required></textarea>
+                    </label>
+                    <button class="btn btn-primary" type="submit">Invia richiesta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-layout">
+            <p>&copy; 2026 Jacopo Lerro. Siti web professionali.</p>
+            <a href="#home">Torna su</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

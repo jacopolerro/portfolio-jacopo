@@ -1,18 +1,17 @@
-# 🧬 Jacopo Lerro // Digital Medicine Hacker
+# Jacopo Lerro | Professional Web Landing Page
 
-This repository contains the source code for my personal portfolio website, designed and developed to present my academic path and professional vision in the field of Digital Medicine.
-I am currently a second-year student in Information Engineering for Digital Medicine, with a strong interest in how technology can enhance clinical and diagnostic processes. This project reflects both my technical skills and my long-term goal: integrating advanced computational systems with the real needs of modern healthcare.
+Sito personale e landing page professionale per presentare servizi di web design, sviluppo siti, landing page, portfolio digitali, prezzi e contatti.
 
-## 🚀 How to Access the Live Website
-You can view the complete and interactive portfolio directly from your browser at the following link:
+## Live
 
-👉 **[jacopolerro.github.io/portfolio-jacopo/](https://jacopolerro.github.io/portfolio-jacopo/)**
+[jacopolerro.github.io/portfolio-jacopo/](https://jacopolerro.github.io/portfolio-jacopo/)
 
-## 🛠️ Tech Stack
-- **Frontend:** HTML5, Vanilla CSS3 (Custom Properties, Animations)
-- **Engine:** JavaScript (Canvas API per lo sfondo interattivo)
-- **Effetti:** Glitch animato, Terminal Typing Effect, Scanlines
-- **Concept:** Medicina Digitale, Bio-Hacking, Data Visualization
+## Stack
 
----
-*Built by Jacopo Lerro // 2026 VERSION 1.2*
+- HTML statico
+- CSS custom responsive
+- JavaScript vanilla per menu, effetti scroll e navigazione attiva
+
+## Note
+
+I testi di servizi, prezzi e casi progetto sono una prima bozza editoriale e possono essere aggiornati man mano con informazioni reali.
