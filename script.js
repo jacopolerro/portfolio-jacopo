@@ -3,6 +3,7 @@ document.documentElement.classList.add("js");
 const menuToggle = document.getElementById("mobile-menu");
 const navLinks = document.getElementById("nav-links");
 const navbar = document.querySelector(".navbar");
+const homeLink = document.querySelector(".logo-mark");
 const navAnchors = document.querySelectorAll(".nav-links a");
 const sections = document.querySelectorAll("main section[id], header[id]");
 
@@ -23,6 +24,8 @@ menuToggle.addEventListener("click", () => {
 navAnchors.forEach((link) => {
     link.addEventListener("click", closeMenu);
 });
+
+homeLink.addEventListener("click", closeMenu);
 
 const revealElements = document.querySelectorAll(".reveal");
 
