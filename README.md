@@ -6,6 +6,10 @@ Sito personale e landing page professionale per presentare servizi di web design
 
 [jacopolerro.github.io/portfolio-jacopo/](https://jacopolerro.github.io/portfolio-jacopo/)
 
+## Link in bio
+
+[jacopolerro.github.io/portfolio-jacopo/link.html](https://jacopolerro.github.io/portfolio-jacopo/link.html)
+
 ## Stack
 
 - HTML statico
