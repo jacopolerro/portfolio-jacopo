@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Rounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="link.css?v=1">
+    <link rel="stylesheet" href="link.css?v=2">
 </head>
 <body>
     <main class="bio-shell">
@@ -93,25 +93,46 @@
                 <h2 id="projects-title">Lavori pubblicati</h2>
             </div>
 
-            <article class="project-card">
-                <div class="project-media" aria-hidden="true">
-                    <img src="assets/jweb-logo.png" alt="">
-                </div>
-                <div class="project-content">
-                    <span class="project-label">Portfolio personale</span>
-                    <h3>JWeb Portfolio</h3>
-                    <p>Sito professionale per presentare servizi di web design, sviluppo, pacchetti, portfolio e contatti.</p>
-                    <ul class="tag-list" aria-label="Tecnologie usate">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                    <div class="project-actions">
-                        <a href="index.html" aria-label="Apri il progetto JWeb Portfolio">Live</a>
-                        <a href="https://github.com/jacopolerro/portfolio-jacopo" target="_blank" rel="noreferrer" aria-label="Apri il codice del progetto JWeb Portfolio su GitHub">Codice</a>
+            <div class="project-list">
+                <article class="project-card">
+                    <div class="project-media project-media-preview" aria-hidden="true">
+                        <img class="project-shot" src="assets/fiveseven-hero.jpg" alt="">
                     </div>
-                </div>
-            </article>
+                    <div class="project-content">
+                        <span class="project-label">Brand musicale</span>
+                        <h3>FIVESEVEN CBR</h3>
+                        <p>Sito per il progetto TRAP SOUND SYSTEM, pensato per presentare identita, atmosfera e presenza online del brand.</p>
+                        <ul class="tag-list" aria-label="Caratteristiche del progetto">
+                            <li>Web design</li>
+                            <li>Brand page</li>
+                            <li>Responsive</li>
+                        </ul>
+                        <div class="project-actions project-actions-single">
+                            <a href="https://fivesevencbr320.com" target="_blank" rel="noreferrer" aria-label="Apri il sito FIVESEVEN CBR">Visita sito</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-media" aria-hidden="true">
+                        <img src="assets/jweb-logo.png" alt="">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-label">Portfolio personale</span>
+                        <h3>JWeb Portfolio</h3>
+                        <p>Sito professionale per presentare servizi di web design, sviluppo, pacchetti, portfolio e contatti.</p>
+                        <ul class="tag-list" aria-label="Tecnologie usate">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="index.html" aria-label="Apri il progetto JWeb Portfolio">Live</a>
+                            <a href="https://github.com/jacopolerro/portfolio-jacopo" target="_blank" rel="noreferrer" aria-label="Apri il codice del progetto JWeb Portfolio su GitHub">Codice</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section class="section-block contact-block" aria-labelledby="contact-title">

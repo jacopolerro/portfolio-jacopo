@@ -243,6 +243,11 @@ h1 {
     font-size: clamp(1.55rem, 7vw, 2.5rem);
 }
 
+.project-list {
+    display: grid;
+    gap: 14px;
+}
+
 .project-card {
     overflow: hidden;
     border: 1px solid var(--line);
@@ -252,9 +257,12 @@ h1 {
 }
 
 .project-media {
+    position: relative;
     display: grid;
     min-height: 170px;
     place-items: center;
+    padding: 18px;
+    overflow: hidden;
     border-bottom: 1px solid var(--line);
     background:
         linear-gradient(135deg, rgba(102, 128, 255, 0.24), rgba(98, 211, 164, 0.16)),
@@ -266,6 +274,34 @@ h1 {
     width: min(220px, 58%);
     height: auto;
     filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.32));
+}
+
+.project-media-preview::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(255, 200, 87, 0.12), rgba(79, 110, 255, 0.08)),
+        radial-gradient(circle at 50% 44%, rgba(255, 25, 25, 0.2), transparent 58%);
+    pointer-events: none;
+}
+
+.project-shot {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 360px);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.34);
+}
+
+.project-media .project-shot {
+    width: min(100%, 360px);
+    height: auto;
+    filter: saturate(1.05) contrast(1.04) drop-shadow(0 18px 32px rgba(0, 0, 0, 0.32));
 }
 
 .project-content {
@@ -327,6 +363,10 @@ h1 {
     font-weight: 800;
     text-decoration: none;
     transition: transform 0.25s var(--ease), background 0.25s ease, border-color 0.25s ease;
+}
+
+.project-actions-single {
+    grid-template-columns: 1fr;
 }
 
 .project-actions a:hover {
